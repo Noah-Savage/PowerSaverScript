@@ -18,6 +18,7 @@
 
 
 ## Instatiate X to be the GUID for Power Saving
+#### SET X TO WHATEVER GUID YOU WANT THE PC TO BE SET TO ####
 
 $x = 'a1841308-3541-4fab-bc81-f71556f20b4a'  
 
@@ -33,6 +34,7 @@ $y = $currScheme.Split()
 ### Script Starts Here ######
 #############################
 
+##### START POWER SCHEME SCRIPT #####
 
 if ($y[3] -eq $x) {
 
@@ -48,10 +50,17 @@ if ($y[3] -eq $x) {
 			
 			}
 
+##### END POWER SCHEME SCRIPT ######
+
+
+##### BEGIN START/KILL PROGRAM SCRIPT #####
+
 #Steps to start/kill ledsync so AIO lights will work
 Start-Process notepad
 Start-Sleep -s 10
 Stop-Process -Name notepad -Force
+
+##### END START/KILL PROGRAM SCRIPT #####
 			
 			
 ##### End of Script # # # #
