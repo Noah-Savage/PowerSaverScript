@@ -1,3 +1,4 @@
+
 #Existing Power Schemes (* Active)
 #-----------------------------------
 #Power Scheme GUID: 1ca6081e-7f76-46f8-b8e5-92a6bd9800cd  (Maximum Battery
@@ -16,15 +17,15 @@
 ##### Variables  # # #  # # #
 
 
-## I want to Use Energy Start as Deault PowerScheme on All Laptops #
+## Instatiate X to be the GUID for Power Saving
 
 $x = 'a1841308-3541-4fab-bc81-f71556f20b4a'  
 
-# Lets Check what is our Current Active "Power Scheme" and put it on a Variable
+# Set current scheme to another var to compare against
 
 $currScheme = POWERCFG -GETACTIVESCHEME 
 
-# Put $CurrScheme in a variable and Spilt is so that we can get the GUID of Active "Power Scheme"
+# Get GUID of current scheme
 
 $y = $currScheme.Split()
 
@@ -46,6 +47,11 @@ if ($y[3] -eq $x) {
 			write-Host -ForegroundColor Green "PowerScheme Sucessfully Applied"
 			
 			}
+
+#Steps to start/kill ledsync so AIO lights will work
+Start-Process notepad
+Start-Sleep -s 10
+Stop-Process -Name notepad -Force
 			
 			
 ##### End of Script # # # #
