@@ -56,9 +56,9 @@ if ($y[3] -eq $x) {
 ##### BEGIN START/KILL PROGRAM SCRIPT #####
 
 #Steps to start/kill ledsync so AIO lights will work
-Start-Process notepad
+Start-Process LEDsync
 Start-Sleep -s 10
-Stop-Process -Name notepad -Force
+Stop-Process -Name LEDsync -Force
 
 ##### END START/KILL PROGRAM SCRIPT #####
 			
